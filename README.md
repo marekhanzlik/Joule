@@ -2,7 +2,8 @@ What is Joule? :man_shrugging:
 
 Shortcuts:  
 `n` create new task  
-`arrows` traverse tasks  
+`arrows` traverse tasks
+`alt+arrows` move task
 `ctrl+enter` edit selected task  
 `esc`,`ctrl+enter`,`arrows` when editing task - commit changes  
 `del` delete selected task
