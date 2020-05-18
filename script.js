@@ -444,7 +444,7 @@ document.addEventListener('keydown', handleKeydownEvent)
 document.addEventListener('keypress', handleKeypressEvent)
 
 function handleKeydownEvent(e) {
-    console.log(e)
+    //console.log(e)
     switch(e.which) {
         case 38: //up
             app.view.triggerFocusOutOnSelectedTask(model.getSelectedTaskId())
@@ -464,11 +464,16 @@ function handleKeydownEvent(e) {
                 model.selectNextTask()
             }
             break;
+        case 46: // delete [when not editing]
+            if(!app.view.editing) {
+                e.preventDefault();
+                model.deleteTask(model.getSelectedTaskId())
+            }
     }
 }
 
 function handleKeypressEvent(e) {
-    console.log(e)
+    //console.log(e)
     if(app.view.editing) {
         switch(e.which) {
             case 10:
@@ -480,19 +485,16 @@ function handleKeypressEvent(e) {
             }
     } else {
         switch(e.which) {
+            case 10:
+            case 13: // enter
+                e.preventDefault();
+                app.view.triggerFocusInOnSelectedTask(model.getSelectedTaskId())
+                break;
             case 43: // +
                 model.incrementProgress()
                 break;
             case 110: // n
                 model.addTask("")
-                break;
-            case 127: // delete
-                e.preventDefault();
-                model.deleteTask(model.getSelectedTaskId())
-            case 10:
-            case 13: // enter
-                e.preventDefault();
-                app.view.triggerFocusInOnSelectedTask(model.getSelectedTaskId())
                 break;
         }
     }
