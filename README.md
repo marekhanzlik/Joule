@@ -9,3 +9,5 @@ Shortcuts:
 `del` delete selected task
 
 `+` add "progress" (my system, explain later)
+
+Visual buttons not working yes (shortcuts do work)

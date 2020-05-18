@@ -312,10 +312,15 @@ class TasksListModel {
 
     deleteTask(taskId) {
         var taskIndex = this.getTaskIndexFromId(taskId)
-        taskIndex = Math.min(Math.max(taskIndex-1, 0), this.tasks.length-1)
-        this.selectTaskOnIndex(taskIndex)
+        var newSelectedTaskIndex = taskIndex
 
         this.tasks = this.tasks.filter(task => task.id !== taskId)
+        
+        if(taskIndex >= this.tasks.length-1) {
+            newSelectedTaskIndex = this.tasks.length-1
+        }
+        
+        this.selectTaskOnIndex(newSelectedTaskIndex)
 
         this.onTaskListChanged(this.tasks)
     }
