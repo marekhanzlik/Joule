@@ -106,13 +106,13 @@ class View {
                 li.id = task.id
                 li.classList = 'drag-item'
                 if(task.selected == true) {
-                    li.style.cssText = 'border: solid 2px #aaa'
+                    li.style.cssText = 'border: solid 2px #e43f5a'
                 }
 
                 const progress_div = this.createElement('div')
                 progress_div.classList.add('progress-container')
 
-                const progress_item = helper.htmlToElement('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="green" width="15px" height="15px"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/><path d="M0 0h24v24H0z" fill="none"/></svg>')
+                const progress_item = helper.htmlToElement('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#44c744" width="15px" height="15px"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/><path d="M0 0h24v24H0z" fill="none"/></svg>')
                 for(var i = 0; i < task.progress; i++) {
                     progress_div.append(progress_item.cloneNode(true))
                 }
@@ -133,12 +133,14 @@ class View {
 
                 const time_dot = this.createElement('div')
                 time_dot.classList.add('time-dot')
-                time_dot.style.cssText = 'background-color: green;'
 
-                control_left_div.append(time_dot)
-                control_left_div.append(time_dot.cloneNode(true))
-                control_left_div.append(time_dot.cloneNode(true))
+                var colors = ["44c744", "ffc00d", "ff9e0d", "e25858"]
+                for(var i = 0; i < 4; i++) {
+                    var time_dot_clone = time_dot.cloneNode(true)
+                    time_dot_clone.style.cssText = `background-color: #${colors[i]}`
 
+                    control_left_div.append(time_dot_clone)
+                }
                 const svg_plus = helper.htmlToElement('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="black" width="15px" height="15px"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/><path d="M0 0h24v24H0z" fill="none"/></svg>')
                 const svg_done = helper.htmlToElement('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="15px" height="15px"><path d="M0 0h24v24H0z" fill="none"/><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/></svg>')
                 const svg_remove = helper.htmlToElement('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="12px" height="12px"><path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"/><path d="M0 0h24v24H0z" fill="none"/></svg>')

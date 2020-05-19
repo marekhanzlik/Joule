@@ -1,5 +1,6 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
+  background-color: #1b1b2f;
 }
 .no-task-message {
   width: auto;
@@ -16,7 +17,7 @@ body {
   margin-top: 10px;
   margin-bottom: 10px;
 
-  background-color: #f2f2f2;
+  background-color: #3f485f;
   opacity: 1;
   border-radius: 5px;
   list-style-type: none;
@@ -30,10 +31,11 @@ body {
   height: auto;
   border-radius: 3px;
   outline: none;
-  box-shadow: 0 0 5px #719ECE;
+  /*box-shadow: 0 0 5px #719ECE;*/
   resize: none;
   white-space: pre-wrap;
-  background-color: white;
+  background-color: #1b1b2f;
+  color: gainsboro;
   font-size: 16px;
   padding: 5px;
 }
