@@ -35,6 +35,7 @@ class View {
             if(event.target.className === 'task-input form-control') {
                 this.editing = true
                 this._temporaryTaskText = event.target.innerText
+                event.target.parentElement.style.cssText = 'border: solid 2px #e43f5a'
             }
         })
     }
@@ -106,7 +107,7 @@ class View {
                 li.id = task.id
                 li.classList = 'drag-item'
                 if(task.selected == true) {
-                    li.style.cssText = 'border: solid 2px #e43f5a'
+                    li.style.cssText = 'border: solid 2px #b7b7b7'
                 }
 
                 const progress_div = this.createElement('div')
@@ -451,6 +452,10 @@ document.addEventListener('keydown', handleKeydownEvent)
 document.addEventListener('keypress', handleKeypressEvent)
 
 function handleKeydownEvent(e) {
+    if(app.view.editing) {
+        return;
+    }
+
     //console.log(e)
     switch(e.which) {
         case 38: //up
@@ -472,10 +477,8 @@ function handleKeydownEvent(e) {
             }
             break;
         case 46: // delete [when not editing]
-            if(!app.view.editing) {
-                e.preventDefault();
-                model.deleteTask(model.getSelectedTaskId())
-            }
+            e.preventDefault();
+            model.deleteTask(model.getSelectedTaskId())
     }
 }
 
