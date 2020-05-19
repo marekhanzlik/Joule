@@ -10,4 +10,8 @@ Shortcuts:
 
 `+` add "progress" (my system, explain later)
 
-Visual buttons not working yes (shortcuts do work)
+Todo:
+Visual buttons not working yet
+Task age indicator
+Color tags
+?Multiple columns?
