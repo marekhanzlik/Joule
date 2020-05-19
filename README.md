@@ -8,10 +8,10 @@ Shortcuts:
 `esc`,`ctrl+enter`,`arrows` when editing task - commit changes  
 `del` delete selected task
 
-`+` add "progress" (my system, explain later)
+`+` add "progress" (my system, explain later)  
 
-Todo:
-Visual buttons not working yet
-Task age indicator
-Color tags
-?Multiple columns?
+Todo:  
+Visual buttons not working yet  
+Task age indicator  
+Color tags  
+?Multiple columns?  
