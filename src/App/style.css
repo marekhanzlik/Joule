@@ -1,0 +1,45 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #1b1b2f;
+}
+.help {
+  color: #7c7ca0;
+}
+.task-list {
+  min-width: 400px;
+  width: 50vw;
+  margin: 30px auto;
+  padding: 0;
+}
+.no-task { 
+  color: white;
+  width: 100%;
+  margin: 0 auto;
+  padding-top: 50px;
+  text-align: center;
+}
+.task-item {
+  margin-bottom: 10px;
+  background-color: #3f485f;
+  opacity: 1;
+  border-radius: 5px;
+  list-style-type: none;
+  color: white;
+  padding: 2px;
+}
+.task-item.edited {
+  background-color: orange;
+}
+.task-item.active {
+  background-color: white;
+}
+.task-editor {
+  overflow: auto;
+  height: auto;
+  border-radius: 3px;
+  outline: none;
+  resize: none;
+  white-space: pre-wrap;
+  word-wrap:break-word;
+  width: 100%;
+}
