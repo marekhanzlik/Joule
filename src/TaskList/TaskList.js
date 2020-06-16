@@ -131,24 +131,19 @@ class TaskList extends React.Component {
                     break
                 }
                 case 38: { //up
-                    let newIndex = this.state.selectedTaskIndex-1
-                    if(newIndex < 0) {
-                        newIndex = this.state.tasks.length-1
+                    if(event.altKey) {
+                        this.moveTaskUp()
+                    } else {
+                        this.moveSelectionUp()
                     }
-                    this.setState({
-                        selectedTaskIndex: newIndex
-                    })
                     break
                 }
-                case 40: //down
-                {
-                    let newIndex = this.state.selectedTaskIndex+1
-                    if(newIndex >= this.state.tasks.length) {
-                        newIndex = 0
+                case 40: { //down
+                    if(event.altKey) {
+                        this.moveTaskDown()
+                    } else {
+                        this.moveSelectionDown()
                     }
-                    this.setState({
-                        selectedTaskIndex: newIndex
-                    })
                     break
                 }
                 case 37: //left
@@ -159,6 +154,64 @@ class TaskList extends React.Component {
                     break
             }
         })
+    }
+
+    moveSelectionUp() {
+        let newIndex = this.state.selectedTaskIndex-1
+        if(newIndex < 0) {
+            newIndex = this.state.tasks.length-1
+        }
+
+        this.selectIndex(newIndex)
+    }
+
+    moveSelectionDown() {
+        let newIndex = this.state.selectedTaskIndex+1
+        if(newIndex >= this.state.tasks.length) {
+            newIndex = 0
+        }
+        
+        this.selectIndex(newIndex)
+    }
+
+    selectIndex(index) {
+        this.setState({
+            selectedTaskIndex: index
+        })
+    }
+
+    moveTaskUp() {
+        let newIndex = this.state.selectedTaskIndex-1
+        if(newIndex < 0) {
+            newIndex = this.state.tasks.length-1
+        }
+
+        this.moveTaskToIndex(this.state.selectedTaskIndex, newIndex)
+        this.selectIndex(newIndex)
+    }
+
+    moveTaskDown() {
+        let newIndex = this.state.selectedTaskIndex+1
+        if(newIndex >= this.state.tasks.length) {
+            newIndex = 0
+        }
+
+        this.moveTaskToIndex(this.state.selectedTaskIndex, newIndex)
+        this.selectIndex(newIndex)
+    }
+
+    moveTaskToIndex(fromIndex, toIndex) {
+        let taskToMove = this.state.tasks[fromIndex]
+
+        let tasks = this.state.tasks
+        tasks.splice(fromIndex, 1)
+        tasks.splice(toIndex, 0, taskToMove)
+
+        this.setState({
+            tasks: tasks
+        })
+
+        this.saveState()
     }
 
     createNewTask() {
