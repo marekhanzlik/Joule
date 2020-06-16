@@ -58,6 +58,7 @@ class TaskList extends React.Component {
                         <pre><b>insert</b>: new task</pre>
                         <pre><b>delete</b>: delete task</pre>
                         <pre><b>arrow keys</b>: traverse tasks</pre>
+                        <pre><b>alt + arrow keys</b>: move tasks</pre>
                         <pre><b>enter or click on selected task</b>: edit task</pre>
                         <pre><b>escape</b>: cancel edit</pre>
                     </div>
