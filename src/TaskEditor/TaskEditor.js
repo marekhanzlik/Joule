@@ -3,6 +3,7 @@ import { UnControlled as CodeMirror } from 'react-codemirror2'
 import 'codemirror/mode/markdown/markdown'
 import 'codemirror/mode/javascript/javascript'
 import 'codemirror/mode/python/python'
+import 'codemirror/mode/clike/clike'
 import 'codemirror/lib/codemirror.css'
 import 'codemirror/theme/monokai.css'
 
