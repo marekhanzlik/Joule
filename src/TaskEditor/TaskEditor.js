@@ -6,6 +6,7 @@ import 'codemirror/mode/python/python'
 import 'codemirror/mode/clike/clike'
 import 'codemirror/lib/codemirror.css'
 import 'codemirror/theme/monokai.css'
+import '../App/monokai-override.css'
 
 class TaskEditor extends React.Component {
   constructor(props) {
