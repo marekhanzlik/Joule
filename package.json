@@ -16,8 +16,8 @@
     "ulid": "^2.3.0"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "start": "react-scripts start ",
+    "build": "react-scripts build && pscp -r C:\\Users\\Marek\\Desktop\\Work\\Frontend\\joule\\build frenzy@joulenotes.tk:/home/frenzy/ && ssh -i C:\\Users\\Marek\\.ssh\\id_rsa frenzy@joulenotes.tk \"./deployJoule.sh\"",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
