@@ -47,7 +47,7 @@ class TaskList extends React.Component {
         let container
         if(children.length > 0) {
             container = (
-                <div className='task-list'>{children}</div>
+                <div id='task-list' className='task-list'>{children}</div>
             )
         } else {
             container = (
@@ -110,7 +110,6 @@ class TaskList extends React.Component {
                 return
             }
 
-            console.log(event.which)
             if (this.isNewTaskHotkey(event)) {
                 event.preventDefault()
                 this.createNewTask()
@@ -225,7 +224,7 @@ class TaskList extends React.Component {
     removeTask() {
         let newTasks = []
         for(let i = 0; i < this.state.tasks.length; i++) {
-            if(i != this.state.selectedTaskIndex) {
+            if(i !== this.state.selectedTaskIndex) {
                 newTasks.push(this.state.tasks[i])
             }
         }

@@ -20,12 +20,13 @@ body {
 }
 .task-item {
   margin-bottom: 10px;
-  background-color: #3f485f;
+  background-color: #3E3D32;
   opacity: 1;
   border-radius: 5px;
   list-style-type: none;
   color: white;
   padding: 2px;
+  margin: 5px;
 }
 .task-item.edited {
   background-color: orange;
@@ -34,7 +35,8 @@ body {
   background-color: white;
 }
 .task-editor {
-  overflow: auto;
+  overflow: hiden;
+  min-height: 100px;
   height: auto;
   border-radius: 3px;
   outline: none;
