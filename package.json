@@ -20,7 +20,7 @@
   },
   "scripts": {
     "start": "PORT=3006 react-scripts start ",
-    "build": "react-scripts build && pscp -r C:\\Users\\Marek\\Desktop\\Work\\Frontend\\joule\\build frenzy@joulenotes.tk:/home/frenzy/ && ssh -i C:\\Users\\Marek\\.ssh\\id_rsa frenzy@joulenotes.tk \"./deployJoule.sh\"",
+    "build": "react-scripts build && scp -r ~/work/joule/build frenzy@joulenotes.tk:/home/frenzy/ && ssh frenzy@joulenotes.tk \"./deployJoule.sh\"",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },

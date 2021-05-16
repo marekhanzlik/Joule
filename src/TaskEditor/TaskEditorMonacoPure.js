@@ -28,6 +28,7 @@ function TaskEditorMonacoPure(props) {
       },
       overviewRulerLanes: 0,
       readOnly: !isEdited,
+      scrollbar: { alwaysConsumeMouseWheel: false },
     });
     editor.getModel().updateOptions({ tabSize: 2 })
     editor.onDidContentSizeChange(() => {updateHeight(editor, widthRef.current)})
@@ -49,7 +50,7 @@ function TaskEditorMonacoPure(props) {
       monaco.editor.defineTheme('monokai', data);
       monaco.editor.setTheme('monokai');
     })
-  })
+  }, [])
 
   if(isEdited !== props.isEdited) {
     const shouldBlur = isEdited === true
