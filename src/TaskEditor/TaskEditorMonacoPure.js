@@ -55,10 +55,12 @@ function TaskEditorMonacoPure(props) {
   if(isEdited !== props.isEdited) {
     const shouldBlur = isEdited === true
     if(shouldBlur) {
-      if (document.activeElement instanceof HTMLElement) {
+      let element = document.getElementById(`${props.id}`)
+      if (document.activeElement instanceof HTMLElement && element.contains(document.activeElement)) {
         document.activeElement.blur();
       }
     } else {
+      editorRef.current.focus()
       editorRef.current.focus()
     }
     setIsEdited(props.isEdited)

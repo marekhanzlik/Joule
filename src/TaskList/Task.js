@@ -11,7 +11,6 @@ function Task(props) {
   const taskItemRef = useRef()
 
   useEffect(() => {
-    console.log("setting width: " + taskItemRef.current.offsetWidth)
     setWidth(taskItemRef.current.offsetWidth)
     window.addEventListener('resize', () => {
       setWidth(taskItemRef.current.offsetWidth)
@@ -29,7 +28,6 @@ function Task(props) {
     }
     props.onTaskDataChanged(serialize())
   }
-  console.log("Rendering with " + width)
   return (
     <div ref={taskItemRef} onClick={props.onClick} className={'task-item ' + (props.isEdited ? 'edited' : props.isActive ? 'active' : '')}>
       <TaskEditorMonacoPure key={id} width={width} isEdited={props.isEdited} id={id} content={content} onTaskEditorChanged={(content) => onTaskEditorChanged(content)} />
